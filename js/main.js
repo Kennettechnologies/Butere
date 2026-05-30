@@ -437,6 +437,79 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Application Modal & Form Handling
+  const applyButtons = document.querySelectorAll('.btn-apply');
+  const applyPositionName = document.getElementById('applyPositionName');
+  const formPositionField = document.getElementById('formPositionField');
+
+  applyButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const position = this.getAttribute('data-position');
+      if (applyPositionName) applyPositionName.textContent = position;
+      if (formPositionField) formPositionField.value = position;
+    });
+  });
+
+  const applicationForm = document.getElementById('application-form');
+  if (applicationForm) {
+    applicationForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      let isValid = true;
+      const fields = applicationForm.querySelectorAll('[required]');
+      fields.forEach(field => {
+        if (!field.value.trim()) {
+          isValid = false;
+          field.classList.add('is-invalid');
+        } else {
+          field.classList.remove('is-invalid');
+        }
+      });
+
+      if (isValid) {
+        const submitBtn = applicationForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        const statusDiv = document.getElementById('application-status');
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+        statusDiv.style.display = 'none';
+        statusDiv.className = 'mt-3 text-center small';
+
+        fetch('https://formspree.io/f/mwvzzbzk', {
+          method: 'POST',
+          body: new FormData(applicationForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+          if (response.ok) {
+            applicationForm.reset();
+            statusDiv.innerHTML = '<span class="text-success"><i class="fa-solid fa-circle-check"></i> Application submitted successfully! We will contact you soon.</span>';
+            statusDiv.style.display = 'block';
+            setTimeout(() => {
+              const modal = bootstrap.Modal.getInstance(document.getElementById('applicationModal'));
+              if (modal) modal.hide();
+              statusDiv.style.display = 'none';
+            }, 3000);
+          } else {
+            statusDiv.innerHTML = '<span class="text-danger"><i class="fa-solid fa-triangle-exclamation"></i> Error submitting application. Please try again.</span>';
+            statusDiv.style.display = 'block';
+          }
+        })
+        .catch(_ => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+          statusDiv.innerHTML = '<span class="text-danger"><i class="fa-solid fa-wifi"></i> Network error. Please check your connection and try again.</span>';
+          statusDiv.style.display = 'block';
+        });
+      }
+    });
+  }
+
   // Event Countdown Clock (e.g. Health campaign countdown)
   const countdownDateEl = document.getElementById('countdown-date');
   if (countdownDateEl) {
