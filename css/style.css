@@ -431,6 +431,117 @@ img {
 }
 [data-theme="dark"] .search-overlay-input { color: var(--text-dark); }
 
+/* Search Results Dropdown */
+.search-results {
+  width: 100%;
+  max-width: 650px;
+  margin: 8px auto 0;
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  max-height: 420px;
+  overflow-y: auto;
+  display: none;
+}
+.search-results.has-results {
+  display: block;
+}
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 18px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+  color: var(--text-body);
+}
+.search-result-item:last-child { border-bottom: none; }
+.search-result-item:hover,
+.search-result-item.focused {
+  background: var(--bg);
+  color: var(--text-dark);
+}
+.search-result-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(10,110,189,0.12), rgba(20,184,166,0.12));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+.search-result-body {
+  flex: 1;
+  min-width: 0;
+}
+.search-result-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search-result-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+.search-result-cat {
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: rgba(10,110,189,0.1);
+  color: var(--primary);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.search-no-results {
+  padding: 24px 18px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.search-no-results i { font-size: 1.1rem; }
+
+/* Dark mode search results */
+[data-theme="dark"] .search-results {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+[data-theme="dark"] .search-result-item {
+  border-color: var(--border);
+  color: var(--text-body);
+}
+[data-theme="dark"] .search-result-item:hover,
+[data-theme="dark"] .search-result-item.focused {
+  background: var(--bg);
+  color: var(--text-dark);
+}
+[data-theme="dark"] .search-result-title { color: var(--text-dark); }
+[data-theme="dark"] .search-result-cat {
+  background: rgba(56,189,248,0.15);
+  color: var(--accent);
+}
+
+
 /* ==========================================
    DARK MODE NAVBAR OVERRIDES
    Bootstrap uses its own --bs-navbar-color which doesn't
