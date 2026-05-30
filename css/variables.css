@@ -1,0 +1,50 @@
+:root {
+  --primary: #0A6EBD;
+  --primary-dark: #085a9b;
+  --primary-light: #3d8fd4;
+  --secondary: #14B8A6;
+  --secondary-dark: #0f9688;
+  --accent: #38BDF8;
+  --bg: #F8FAFC;
+  --bg-white: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --text-dark: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+  --danger: #DC2626;
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --border: #E2E8F0;
+  --shadow-sm: 0 1px 3px rgba(15,23,42,0.08);
+  --shadow-md: 0 4px 12px rgba(15,23,42,0.1);
+  --shadow-lg: 0 10px 30px rgba(15,23,42,0.12);
+  --shadow-xl: 0 20px 50px rgba(15,23,42,0.15);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --gradient-primary: linear-gradient(135deg, #0A6EBD, #14B8A6);
+  --gradient-hero: linear-gradient(135deg, rgba(10,110,189,0.9), rgba(20,184,166,0.7));
+  --gradient-card: linear-gradient(135deg, #f0f9ff, #f0fdfa);
+  --transition: all 0.3s ease;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --navbar-height: 80px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F172A;
+  --bg-white: #1E293B;
+  --bg-card: #1E293B;
+  --text-dark: #F1F5F9;
+  --text-body: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-light: #64748B;
+  --border: #334155;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.5);
+  --shadow-xl: 0 20px 50px rgba(0,0,0,0.6);
+  --gradient-card: linear-gradient(135deg, #1e293b, #1a2332);
+}

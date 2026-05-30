@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Events - Butere County County Hospital</title>
+  <meta name="description" content="Stay up to date with public health campaigns, county notices, clinic alerts, and medical outreach programs in Butere.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> Emergency Hotline: +254 (0) 700 000 000</span>
+        <span><i class="fa-solid fa-clock"></i> Hours: 24 Hours Open (OPD & Emergency)</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="faq.html">FAQs</a>
+        <a href="careers.html">Careers & Attachments</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container-fluid px-lg-5 px-3">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+        <span>
+          <strong>BUTERE COUNTY</strong>
+          <span class="brand-sub">County Hospital</span>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="departments.html">Departments</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+          <li class="nav-item"><a class="nav-link active" href="news.html">News & Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a href="appointments.html" class="btn btn-custom btn-custom-primary">
+            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>News & Public Notices</h1>
+      <ul class="breadcrumb-custom">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">News</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Featured Event Banner / Countdown -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <span class="badge bg-danger text-white mb-2 px-3 py-2 rounded-pill">UPCOMING OUTREACH</span>
+          <h2 class="mb-3 fw-bold text-dark">Free Sub-County Medical Camp 2026</h2>
+          <p class="lead text-primary mb-3">Providing free clinical consultation, cancer screening, and chronic disease testing.</p>
+          <p class="mb-4">Butere County County Hospital, in cooperation with Kakamega County health partners, will host a comprehensive medical camp. Services offered include pediatric care, dental checkups, laboratory blood tests, and NHIF/SHIF registration services. All treatments are completely free.</p>
+          <div class="d-flex gap-3 text-muted mb-4 text-start">
+            <div><i class="fa-solid fa-calendar-days text-primary me-1"></i> June 15, 2026</div>
+            <div><i class="fa-solid fa-location-dot text-primary me-1"></i> Butere Sub-County HQ</div>
+            <div><i class="fa-solid fa-clock text-primary me-1"></i> 8:00 AM - 5:00 PM</div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="card border-0 shadow-lg p-4" style="border-radius: var(--radius-lg); background: var(--gradient-card);">
+            <h4 class="fw-bold text-center mb-3"><i class="fa-solid fa-stopwatch text-primary me-2"></i>Camp Launch Countdown</h4>
+            <p class="text-center text-muted small mb-4">Doors open at exactly 8:00 AM at the headquarters.</p>
+            <div class="countdown-container" id="countdown-date">
+              <div class="countdown-digits">
+                <div class="countdown-box">
+                  <span id="days" class="countdown-number">00</span>
+                  <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-box">
+                  <span id="hours" class="countdown-number">00</span>
+                  <span class="countdown-label">Hrs</span>
+                </div>
+                <div class="countdown-box">
+                  <span id="minutes" class="countdown-number">00</span>
+                  <span class="countdown-label">Min</span>
+                </div>
+                <div class="countdown-box">
+                  <span id="seconds" class="countdown-number">00</span>
+                  <span class="countdown-label">Sec</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Search Section -->
+  <section class="py-4 bg-light-gray border-top border-bottom">
+    <div class="container">
+      <div class="row g-4 align-items-center justify-content-between">
+        <div class="col-lg-6">
+          <div class="gallery-filters mb-0">
+            <button class="gallery-filter-btn active" data-filter="all">All News</button>
+            <button class="gallery-filter-btn" data-filter="campaign">Campaigns</button>
+            <button class="gallery-filter-btn" data-filter="announcements">Announcements</button>
+            <button class="gallery-filter-btn" data-filter="outreach">Community Outreach</button>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+            <input type="text" id="search-input" class="form-control bg-white border-start-0 ps-0" placeholder="Search news articles...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Grid -->
+  <section class="section-padding bg-light-gray">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- Post 1 -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="campaign" data-aos="fade-up" data-aos-delay="100">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <img src="images/hero-hospital.png" alt="Polio Campaign" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title">Sub-County Polio Vaccination Rollout 2026</h3>
+              <p class="hospital-card-text">Free polio vaccination program launching for infants and toddlers under 5 years old. Clinics are situated across local administration blocks.</p>
+              <div class="hospital-card-meta">
+                <span><i class="fa-solid fa-calendar-days me-1"></i> May 25, 2026</span>
+                <span><i class="fa-solid fa-tag me-1"></i> Campaign</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="announcements" data-aos="fade-up" data-aos-delay="200">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <img src="images/hero-hospital.png" alt="Laboratory analyzers" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title">Hospital Receives Biochemistry Analyzers</h3>
+              <p class="hospital-card-text">With direct assistance from the Kakamega County Government, our diagnostic laboratory has integrated state-of-the-art diagnostic machinery.</p>
+              <div class="hospital-card-meta">
+                <span><i class="fa-solid fa-calendar-days me-1"></i> May 18, 2026</span>
+                <span><i class="fa-solid fa-tag me-1"></i> Announcements</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="campaign" data-aos="fade-up" data-aos-delay="300">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <img src="images/hero-hospital.png" alt="Ultrasound scans" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title">Free Maternal Ultrasound Scans Wednesdays</h3>
+              <p class="hospital-card-text">Expectant mothers can now benefit from ultrasound checkups free of charge as part of our county maternal health support goals.</p>
+              <div class="hospital-card-meta">
+                <span><i class="fa-solid fa-calendar-days me-1"></i> May 10, 2026</span>
+                <span><i class="fa-solid fa-tag me-1"></i> Campaign</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 4 -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="outreach" data-aos="fade-up" data-aos-delay="100">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <img src="images/hero-hospital.png" alt="Hygiene campaign" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title">Cholera Prevention Outreach and Hygiene Training</h3>
+              <p class="hospital-card-text">Our public health division hosted a water purification and sanitation workshop for families living along local river basins.</p>
+              <div class="hospital-card-meta">
+                <span><i class="fa-solid fa-calendar-days me-1"></i> April 28, 2026</span>
+                <span><i class="fa-solid fa-tag me-1"></i> Community Outreach</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="announcements" data-aos="fade-up" data-aos-delay="200">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <img src="images/hero-hospital.png" alt="Visiting hours notice" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title">Revision of Hospital Patient Visiting Wards Hours</h3>
+              <p class="hospital-card-text">To allow optimal medical treatment and sanitation, patient visiting periods are now strictly designated between 1:00 PM and 2:00 PM, and 4:30 PM and 6:00 PM.</p>
+              <div class="hospital-card-meta">
+                <span><i class="fa-solid fa-calendar-days me-1"></i> April 15, 2026</span>
+                <span><i class="fa-solid fa-tag me-1"></i> Announcements</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="hospital-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-logo-wrapper">
+            <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+            <span class="footer-logo-text">
+              BUTERE COUNTY
+              <span>County Hospital</span>
+            </span>
+          </div>
+          <p class="mb-4">We are dedicated to providing accessible, high-quality healthcare services to Butere Sub-County and the surrounding regions. Your health is our priority.</p>
+          <div class="footer-social-icons">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Our Doctors</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Photo Gallery</a></li>
+            <li><a href="careers.html"><i class="fa-solid fa-chevron-right"></i> Careers & Intake</a></li>
+            <li><a href="faq.html"><i class="fa-solid fa-chevron-right"></i> Patient FAQs</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Our Departments</h4>
+          <ul class="footer-links">
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Outpatient (OPD)</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Maternity & Theatre</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Pediatrics Ward</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Radiology & X-Ray</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Medical Laboratory</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Comprehensive Care (CCC)</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Butere-Mumias Road, Butere Town, Kakamega County, Kenya</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+254 (0) 700 000 000<br>+254 (0) 722 000 000</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>info@buterehospital.go.ke<br>appointments@buterehospital.go.ke</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Butere County County Hospital. All rights reserved. An official government health institution website.</p>
+        <p>Managed by Kakamega County Government | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Use</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-actions">
+    <a href="tel:+254700000000" class="float-btn btn-emergency-float" aria-label="Call Emergency Hotline">
+      <i class="fa-solid fa-phone-flip"></i>
+    </a>
+    <a href="https://wa.me/254700000000" target="_blank" class="float-btn btn-whatsapp-float" aria-label="Chat via WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button class="float-btn btn-scroll-top" aria-label="Scroll back to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Scroll Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment - Butere County County Hospital</title>
+  <meta name="description" content="Schedule a consultation with our doctors online. Enter your details and choose your clinical department.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> Emergency Hotline: +254 (0) 700 000 000</span>
+        <span><i class="fa-solid fa-clock"></i> Hours: 24 Hours Open (OPD & Emergency)</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="faq.html">FAQs</a>
+        <a href="careers.html">Careers & Attachments</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container-fluid px-lg-5 px-3">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+        <span>
+          <strong>BUTERE COUNTY</strong>
+          <span class="brand-sub">County Hospital</span>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="departments.html">Departments</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News & Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a href="appointments.html" class="btn btn-custom btn-custom-primary active">
+            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Book an Appointment</h1>
+      <ul class="breadcrumb-custom">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">Appointments</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Booking Form & Info Section -->
+  <section class="section-padding bg-light-gray">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Info Column -->
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="pe-lg-4">
+            <span class="badge bg-primary text-white mb-2 px-3 py-2 rounded-pill">PATIENT DESK</span>
+            <h2 class="mb-4">Schedule Your Consultation</h2>
+            <p class="mb-4">To schedule a clinic session with our specialist doctors, kindly fill out our digital form. Our records desks will confirm availability via SMS within 2 hours of submission.</p>
+            
+            <div class="card border-0 shadow-sm p-4 mb-4" style="border-radius: var(--radius-md); background-color: var(--bg-card); color: var(--text-body);">
+              <h4 class="fw-bold mb-3" style="color: var(--text-dark);"><i class="fa-solid fa-circle-info text-primary me-2"></i>Booking Guidelines</h4>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><i class="fa-solid fa-circle-check text-primary me-2"></i><strong>Select specialty clinic:</strong> Check clinic days.</li>
+                <li class="mb-2"><i class="fa-solid fa-circle-check text-primary me-2"></i><strong>Carry ID / Insurance:</strong> Active NHIF/SHIF registration card.</li>
+                <li class="mb-2"><i class="fa-solid fa-circle-check text-primary me-2"></i><strong>Arrive 15 mins early:</strong> Allows for quick clinical triage.</li>
+                <li><i class="fa-solid fa-circle-check text-primary me-2"></i><strong>SMS alerts:</strong> Confirmation code sent to phone number.</li>
+              </ul>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-primary text-white fs-3 rounded-circle p-3 d-flex align-items-center justify-content-center" style="width:60px; height:60px;">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0" style="color: var(--text-dark);">Direct Booking Line</h5>
+                <p class="mb-0" style="color: var(--text-muted);">+254 (0) 700 000 000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="contact-form-wrapper">
+            <h3 class="fw-bold mb-4">Patient Appointment Request</h3>
+            
+            <form id="appointment-form" action="https://formspree.io/f/mwvzzbzk" method="POST" novalidate>
+              <div class="row">
+                <!-- Full Name -->
+                <div class="col-md-6 form-group-custom">
+                  <label for="fullName" class="form-label-custom">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" id="fullName" name="name" class="form-control-custom" placeholder="e.g. John Khalwale" required>
+                  <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+                
+                <!-- Phone -->
+                <div class="col-md-6 form-group-custom">
+                  <label for="phone" class="form-label-custom">Phone Number <span class="text-danger">*</span></label>
+                  <input type="tel" id="phone" name="phone" class="form-control-custom" placeholder="e.g. 0712345678" required>
+                  <div class="invalid-feedback">Please enter your mobile phone number.</div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6 form-group-custom">
+                  <label for="email" class="form-label-custom">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" id="email" name="email" class="form-control-custom" placeholder="e.g. name@domain.com" required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <!-- Department -->
+                <div class="col-md-6 form-group-custom">
+                  <label for="department" class="form-label-custom">Clinical Department <span class="text-danger">*</span></label>
+                  <select id="department" name="department" class="form-control-custom" required>
+                    <option value="" disabled selected>Select Department</option>
+                    <option value="opd">Outpatient (OPD)</option>
+                    <option value="maternity">Maternity & Delivery</option>
+                    <option value="pediatrics">Pediatrics Ward</option>
+                    <option value="dental">Dental Clinic</option>
+                    <option value="surgery">General Surgery</option>
+                    <option value="physiotherapy">Physiotherapy</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a department.</div>
+                </div>
+
+                <!-- Date Picker -->
+                <div class="col-md-12 form-group-custom">
+                  <label for="appointmentDate" class="form-label-custom">Preferred Date <span class="text-danger">*</span></label>
+                  <input type="date" id="appointmentDate" name="date" class="form-control-custom" required>
+                  <div class="invalid-feedback">Please pick a preferred date.</div>
+                </div>
+
+                <!-- Symptoms / Notes -->
+                <div class="col-md-12 form-group-custom">
+                  <label for="symptoms" class="form-label-custom">Brief Description of Symptoms / Medical Inquiry <span class="text-danger">*</span></label>
+                  <textarea id="symptoms" name="symptoms" rows="4" class="form-control-custom" placeholder="e.g. general checkup, high blood pressure monitoring refills, severe headaches..." required></textarea>
+                  <div class="invalid-feedback">Please describe your symptoms.</div>
+                </div>
+
+                <div class="col-md-12 mt-3">
+                  <button type="submit" class="btn btn-custom btn-custom-primary w-100"><i class="fa-solid fa-paper-plane"></i> Submit Appointment Request</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="appointmentSuccessModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: var(--radius-md); background-color: var(--bg-white); border-top: 5px solid var(--success);">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title fw-bold text-success" id="successModalLabel"><i class="fa-solid fa-circle-check"></i> Booking Successful</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <div class="text-success fs-1 mb-3"><i class="fa-solid fa-square-poll-vertical"></i></div>
+          <p class="lead fw-bold" style="color: var(--text-dark);">Thank you for booking!</p>
+          <p class="text-muted">We have received your appointment request. A confirmation text containing details on your clinical time slot and consulting doctor will be sent to your phone number shortly.</p>
+          <button type="button" class="btn btn-custom btn-custom-primary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="hospital-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-logo-wrapper">
+            <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+            <span class="footer-logo-text">
+              BUTERE COUNTY
+              <span>County Hospital</span>
+            </span>
+          </div>
+          <p class="mb-4">We are dedicated to providing accessible, high-quality healthcare services to Butere Sub-County and the surrounding regions. Your health is our priority.</p>
+          <div class="footer-social-icons">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Our Doctors</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Photo Gallery</a></li>
+            <li><a href="careers.html"><i class="fa-solid fa-chevron-right"></i> Careers & Intake</a></li>
+            <li><a href="faq.html"><i class="fa-solid fa-chevron-right"></i> Patient FAQs</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Our Departments</h4>
+          <ul class="footer-links">
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Outpatient (OPD)</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Maternity & Theatre</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Pediatrics Ward</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Radiology & X-Ray</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Medical Laboratory</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Comprehensive Care (CCC)</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Butere-Mumias Road, Butere Town, Kakamega County, Kenya</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+254 (0) 700 000 000<br>+254 (0) 722 000 000</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>info@buterehospital.go.ke<br>appointments@buterehospital.go.ke</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Butere County County Hospital. All rights reserved. An official government health institution website.</p>
+        <p>Managed by Kakamega County Government | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Use</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-actions">
+    <a href="tel:+254700000000" class="float-btn btn-emergency-float" aria-label="Call Emergency Hotline">
+      <i class="fa-solid fa-phone-flip"></i>
+    </a>
+    <a href="https://wa.me/254700000000" target="_blank" class="float-btn btn-whatsapp-float" aria-label="Chat via WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button class="float-btn btn-scroll-top" aria-label="Scroll back to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Scroll Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>

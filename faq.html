@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions - Butere County County Hospital</title>
+  <meta name="description" content="Find answers to questions about NHIF/SHIF coverage, clinic times, patient visits, fees, and emergency workflows.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> Emergency Hotline: +254 (0) 700 000 000</span>
+        <span><i class="fa-solid fa-clock"></i> Hours: 24 Hours Open (OPD & Emergency)</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="faq.html">FAQs</a>
+        <a href="careers.html">Careers & Attachments</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container-fluid px-lg-5 px-3">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+        <span>
+          <strong>BUTERE COUNTY</strong>
+          <span class="brand-sub">County Hospital</span>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="departments.html">Departments</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News & Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a href="appointments.html" class="btn btn-custom btn-custom-primary">
+            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Patient FAQs</h1>
+      <ul class="breadcrumb-custom">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">FAQ</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- FAQ Search Controls -->
+  <section class="py-5 bg-white border-bottom">
+    <div class="container">
+      <div class="row g-4 align-items-center justify-content-between">
+        <div class="col-lg-7">
+          <div class="gallery-filters mb-0">
+            <button class="gallery-filter-btn faq-cat-btn active" data-faq-cat="all">All FAQs</button>
+            <button class="gallery-filter-btn faq-cat-btn" data-faq-cat="insurance">NHIF & Insurance</button>
+            <button class="gallery-filter-btn faq-cat-btn" data-faq-cat="appointments">Appointments</button>
+            <button class="gallery-filter-btn faq-cat-btn" data-faq-cat="visitors">Visiting Hours</button>
+            <button class="gallery-filter-btn faq-cat-btn" data-faq-cat="payments">Payments & Fees</button>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+            <input type="text" id="search-input" class="form-control bg-light border-start-0 ps-0" placeholder="Type to search FAQs...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordions -->
+  <section class="section-padding bg-light-gray">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          
+          <!-- Category: Insurance -->
+          <div class="faq-accordion-group filterable-item" data-faq-group="insurance" data-aos="fade-up">
+            <h4 class="fw-bold mb-3 text-dark"><i class="fa-solid fa-id-card text-primary me-2"></i>NHIF / SHIF Coverage</h4>
+            <div class="accordion faq-accordion mb-5" id="nhifAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#nFaq1">
+                    Does the hospital accept SHIF and NHIF cards?
+                  </button>
+                </h2>
+                <div id="nFaq1" class="accordion-collapse collapse show" data-bs-parent="#nhifAccordion">
+                  <div class="accordion-body">
+                    Yes, we fully accept SHIF and NHIF cards for both outpatient checkups and inpatient admissions. Kindly present your active insurance card at the records and billing counters for verification.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nFaq2">
+                    Are maternity delivery services covered by NHIF Linda Mama?
+                  </button>
+                </h2>
+                <div id="nFaq2" class="accordion-collapse collapse" data-bs-parent="#nhifAccordion">
+                  <div class="accordion-body">
+                    Yes, normal deliveries, cesarean operations, prenatal clinic (ANC) checks, and infant child immunizations are covered 100% under the government Linda Mama initiative. Registration is handled on site.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category: Appointments -->
+          <div class="faq-accordion-group filterable-item" data-faq-group="appointments" data-aos="fade-up">
+            <h4 class="fw-bold mb-3 text-dark"><i class="fa-solid fa-calendar-check text-primary me-2"></i>Appointments & Consultations</h4>
+            <div class="accordion faq-accordion mb-5" id="apptAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aFaq1">
+                    How do I schedule a specialist clinical appointment?
+                  </button>
+                </h2>
+                <div id="aFaq1" class="accordion-collapse collapse" data-bs-parent="#apptAccordion">
+                  <div class="accordion-body">
+                    You can schedule a consultation online using our <a href="appointments.html">Appointment Portal</a> or by dialing +254 (0) 700 000 000. You will receive an SMS confirmation showing your clinical department and arrival slot.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aFaq2">
+                    Can I walk in without booking an appointment?
+                  </button>
+                </h2>
+                <div id="aFaq2" class="accordion-collapse collapse" data-bs-parent="#apptAccordion">
+                  <div class="accordion-body">
+                    Yes, general outpatient consultations (OPD) and emergency triage run on a walk-in basis 24 hours a day. However, planned consultant clinics (such as orthopedic reviews or gynecological surgery prep) require booking.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category: Visitors -->
+          <div class="faq-accordion-group filterable-item" data-faq-group="visitors" data-aos="fade-up">
+            <h4 class="fw-bold mb-3 text-dark"><i class="fa-solid fa-clock text-primary me-2"></i>Visiting Wards & Hours</h4>
+            <div class="accordion faq-accordion mb-5" id="visitorsAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vFaq1">
+                    What are the patient visiting hours for inpatient wards?
+                  </button>
+                </h2>
+                <div id="vFaq1" class="accordion-collapse collapse" data-bs-parent="#visitorsAccordion">
+                  <div class="accordion-body">
+                    Patient visiting hours are strictly scheduled between **1:00 PM and 2:00 PM** and **4:30 PM and 6:00 PM** daily. This structure guarantees that clinical rounds, medications, and ward cleaning are executed smoothly.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vFaq2">
+                    How many visitors are allowed per patient?
+                  </button>
+                </h2>
+                <div id="vFaq2" class="accordion-collapse collapse" data-bs-parent="#visitorsAccordion">
+                  <div class="accordion-body">
+                    To maintain hygiene, prevent congestion, and guarantee patient comfort, only **2 visitors** are allowed at a patient's bedside at any given time.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category: Payments -->
+          <div class="faq-accordion-group filterable-item" data-faq-group="payments" data-aos="fade-up">
+            <h4 class="fw-bold mb-3 text-dark"><i class="fa-solid fa-money-bill-wave text-primary me-2"></i>Payments & Fees</h4>
+            <div class="accordion faq-accordion" id="paymentsAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pFaq1">
+                    Does the hospital accept cash payments or M-Pesa?
+                  </button>
+                </h2>
+                <div id="pFaq1" class="accordion-collapse collapse" data-bs-parent="#paymentsAccordion">
+                  <div class="accordion-body">
+                    We accept payments made via government M-Pesa Paybill systems, visa cards, and county revenue receipt desks. General cash payments are not accepted at doctor consulting offices for transparency reasons.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pFaq2">
+                    Is there emergency waiver options for patients without money?
+                  </button>
+                </h2>
+                <div id="pFaq2" class="accordion-collapse collapse" data-bs-parent="#paymentsAccordion">
+                  <div class="accordion-body">
+                    Yes, emergency life-saving stabilization is administered immediately to all patients, regardless of upfront payments. Our county medical social workers collaborate with families to resolve billing later.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="hospital-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-logo-wrapper">
+            <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+            <span class="footer-logo-text">
+              BUTERE COUNTY
+              <span>County Hospital</span>
+            </span>
+          </div>
+          <p class="mb-4">We are dedicated to providing accessible, high-quality healthcare services to Butere Sub-County and the surrounding regions. Your health is our priority.</p>
+          <div class="footer-social-icons">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Our Doctors</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Photo Gallery</a></li>
+            <li><a href="careers.html"><i class="fa-solid fa-chevron-right"></i> Careers & Intake</a></li>
+            <li><a href="faq.html"><i class="fa-solid fa-chevron-right"></i> Patient FAQs</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Our Departments</h4>
+          <ul class="footer-links">
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Outpatient (OPD)</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Maternity & Theatre</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Pediatrics Ward</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Radiology & X-Ray</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Medical Laboratory</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Comprehensive Care (CCC)</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Butere-Mumias Road, Butere Town, Kakamega County, Kenya</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+254 (0) 700 000 000<br>+254 (0) 722 000 000</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>info@buterehospital.go.ke<br>appointments@buterehospital.go.ke</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Butere County County Hospital. All rights reserved. An official government health institution website.</p>
+        <p>Managed by Kakamega County Government | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Use</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-actions">
+    <a href="tel:+254700000000" class="float-btn btn-emergency-float" aria-label="Call Emergency Hotline">
+      <i class="fa-solid fa-phone-flip"></i>
+    </a>
+    <a href="https://wa.me/254700000000" target="_blank" class="float-btn btn-whatsapp-float" aria-label="Chat via WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button class="float-btn btn-scroll-top" aria-label="Scroll back to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Scroll Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>

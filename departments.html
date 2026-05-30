@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Departments - Butere County County Hospital</title>
+  <meta name="description" content="Explore our specialized clinical departments including OPD, Maternity, Pediatrics, Laboratory, Radiology, Dental, Surgery, and more.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> Emergency Hotline: +254 (0) 700 000 000</span>
+        <span><i class="fa-solid fa-clock"></i> Hours: 24 Hours Open (OPD & Emergency)</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="faq.html">FAQs</a>
+        <a href="careers.html">Careers & Attachments</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container-fluid px-lg-5 px-3">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+        <span>
+          <strong>BUTERE COUNTY</strong>
+          <span class="brand-sub">County Hospital</span>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="departments.html">Departments</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News & Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a href="appointments.html" class="btn btn-custom btn-custom-primary">
+            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Medical Departments</h1>
+      <ul class="breadcrumb-custom">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">Departments</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Search & Filter Controls -->
+  <section class="py-5 bg-white border-bottom">
+    <div class="container">
+      <div class="row g-4 align-items-center justify-content-between">
+        <div class="col-lg-6">
+          <div class="gallery-filters mb-0">
+            <button class="gallery-filter-btn active" data-filter="all">All Wards</button>
+            <button class="gallery-filter-btn" data-filter="clinical">Clinical Care</button>
+            <button class="gallery-filter-btn" data-filter="diagnostics">Diagnostics & Lab</button>
+            <button class="gallery-filter-btn" data-filter="specialized">Specialized Clinic</button>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+            <input type="text" id="search-input" class="form-control bg-light border-start-0 ps-0" placeholder="Search departments...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Department Grid -->
+  <section class="section-padding bg-light-gray">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- OPD -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="clinical" data-aos="fade-up" data-aos-delay="100">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">24 HOURS</div>
+              <img src="images/hero-hospital.png" alt="Outpatient Department" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-notes-medical text-primary me-2"></i>Outpatient (OPD)</h3>
+              <p class="hospital-card-text">Comprehensive primary care, consultation desk, pharmacy integration, and standard referral pathways.</p>
+              <ul class="card-services-list">
+                <li>General Physician Consultations</li>
+                <li>Emergency Triage Support</li>
+                <li>Pre-admission screening</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Open: 24/7 Days</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#opdModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maternity -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="clinical" data-aos="fade-up" data-aos-delay="200">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">24 HOURS</div>
+              <img src="images/hero-hospital.png" alt="Maternity Unit" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-baby-carriage text-primary me-2"></i>Maternity Unit</h3>
+              <p class="hospital-card-text">Full maternal care suite, modern labor ward, antenatal screening, postnatal clinics, and incubator support.</p>
+              <ul class="card-services-list">
+                <li>Prenatal & Postnatal Care</li>
+                <li>Cesarean Sections</li>
+                <li>Neonatal Intensive Care (NICU)</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Open: 24/7 Days</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#maternityModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pediatrics -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="clinical" data-aos="fade-up" data-aos-delay="300">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">24 HOURS</div>
+              <img src="images/hero-hospital.png" alt="Pediatrics" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-child-reaching text-primary me-2"></i>Pediatrics Ward</h3>
+              <p class="hospital-card-text">Specialized healthcare for infants, toddlers, and young children. Immunization clinics run daily.</p>
+              <ul class="card-services-list">
+                <li>Childhood Immunization</li>
+                <li>Growth Monitoring</li>
+                <li>Pediatric Emergency Support</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Open: 24/7 Days</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#pediatricsModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Laboratory -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="diagnostics" data-aos="fade-up" data-aos-delay="100">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">DIAGNOSTICS</div>
+              <img src="images/hero-hospital.png" alt="Lab" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-microscope text-primary me-2"></i>Medical Laboratory</h3>
+              <p class="hospital-card-text">Equipped with fully automated biochemistry analyzers, PCR equipment, hematology readers, and rapid diagnosis tests.</p>
+              <ul class="card-services-list">
+                <li>Hematology & Biochemistry</li>
+                <li>Parasitology & Serology</li>
+                <li>PCR & Viral Load Checks</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Open: 24 Hours</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#labModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Radiology -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="diagnostics" data-aos="fade-up" data-aos-delay="200">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">DIAGNOSTICS</div>
+              <img src="images/hero-hospital.png" alt="Radiology" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-x-ray text-primary me-2"></i>Radiology & Imaging</h3>
+              <p class="hospital-card-text">Advanced imaging solutions including digital X-rays, ultrasound imaging, and echocardiography scans.</p>
+              <ul class="card-services-list">
+                <li>Digital X-Ray Scans</li>
+                <li>Ultrasound Imaging</li>
+                <li>Dental X-Ray (OPG)</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Open: 24 Hours</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#radiologyModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pharmacy -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="diagnostics" data-aos="fade-up" data-aos-delay="300">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">24 HOURS</div>
+              <img src="images/hero-hospital.png" alt="Pharmacy" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-pills text-primary me-2"></i>Hospital Pharmacy</h3>
+              <p class="hospital-card-text">Fully stocked facility dispensing prescriptions, chronic disease refill packets, and patient medical counseling.</p>
+              <ul class="card-services-list">
+                <li>Prescription Dispensing</li>
+                <li>NHIF Pre-auth medications</li>
+                <li>Clinical Drug Counseling</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Open: 24/7 Hours</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#pharmacyModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="clinical" data-aos="fade-up" data-aos-delay="100">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">24 HOURS</div>
+              <img src="images/hero-hospital.png" alt="Emergency" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-truck-medical text-primary me-2"></i>Emergency Unit</h3>
+              <p class="hospital-card-text">Trauma response ward, specialized life support equipment, and county ambulance dispatch system.</p>
+              <ul class="card-services-list">
+                <li>Trauma Treatment</li>
+                <li>Ambulance Service</li>
+                <li>Acute Observation Wards</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Open: 24/7 Hours</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#emergencyModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dental -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="specialized" data-aos="fade-up" data-aos-delay="200">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">SPECIALIZED</div>
+              <img src="images/hero-hospital.png" alt="Dental" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-tooth text-primary me-2"></i>Dental Department</h3>
+              <p class="hospital-card-text">Comprehensive dental surgery, hygiene, orthodontics, oral diagnostics, and tooth extractions.</p>
+              <ul class="card-services-list">
+                <li>Teeth Extraction & Fillings</li>
+                <li>Orthodontic Assessments</li>
+                <li>Root Canal Therapy</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Mon-Sat: 8am - 5pm</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#dentalModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Surgery -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="clinical" data-aos="fade-up" data-aos-delay="300">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">SURGERY</div>
+              <img src="images/hero-hospital.png" alt="Surgery" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-user-doctor text-primary me-2"></i>General Surgery</h3>
+              <p class="hospital-card-text">State-of-the-art operating theater catering to scheduled operations, emergency trauma, and orthopedics.</p>
+              <ul class="card-services-list">
+                <li>Major & Minor Surgeries</li>
+                <li>Post-operative Wards</li>
+                <li>Anesthetic Consultations</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Open: 24/7 Hours</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#surgeryModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HIV Clinic (CCC) -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="specialized" data-aos="fade-up" data-aos-delay="100">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">SPECIALIZED</div>
+              <img src="images/hero-hospital.png" alt="CCC" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-ribbon text-primary me-2"></i>Comprehensive Care (CCC)</h3>
+              <p class="hospital-card-text">Free clinic supporting HIV care, viral load testing, nutritional support, and counseling services.</p>
+              <ul class="card-services-list">
+                <li>ART Medication Refills</li>
+                <li>Viral Load Tracking</li>
+                <li>Psychosocial Support groups</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Mon-Fri: 8am - 5pm</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#cccModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Physiotherapy -->
+        <div class="col-lg-4 col-md-6 filterable-item" data-category="specialized" data-aos="fade-up" data-aos-delay="200">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">SPECIALIZED</div>
+              <img src="images/hero-hospital.png" alt="Physiotherapy" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-person-walking text-primary me-2"></i>Physiotherapy</h3>
+              <p class="hospital-card-text">Rehabilitative physical therapy, muscle stimulations, post-stroke exercises, and orthopedic orthotics.</p>
+              <ul class="card-services-list">
+                <li>Post-injury rehabilitation</li>
+                <li>Stroke Recovery therapy</li>
+                <li>Chronic Pain Relief exercises</li>
+              </ul>
+              <div class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> Mon-Fri: 8am - 4pm</span>
+                <button class="btn btn-sm btn-custom btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#physioModal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals for details -->
+  <!-- OPD Modal -->
+  <div class="modal fade" id="opdModal" tabindex="-1" aria-labelledby="opdModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: var(--radius-md); background-color: var(--bg-white);">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title fw-bold" id="opdModalLabel">Outpatient Department (OPD)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Our General Outpatient Department serves as the entry point for most of our clinical services. We have multiple doctors' consulting rooms to ensure minimal waiting times.</p>
+          <h6 class="fw-bold mb-2">Services Rendered:</h6>
+          <ul>
+            <li>Clinical Consultation by Registered Medical Officers</li>
+            <li>Triage, blood pressure monitoring, and temperature evaluation</li>
+            <li>Treatment of minor ailments and infections</li>
+            <li>Observation rooms for stabilizing patients</li>
+          </ul>
+          <div class="mt-3 p-3 bg-light rounded text-center small text-muted">
+            <strong>Head of OPD:</strong> Dr. David Wafula | <strong>Hours:</strong> 24/7 Hours open
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Maternity Modal -->
+  <div class="modal fade" id="maternityModal" tabindex="-1" aria-labelledby="maternityModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: var(--radius-md); background-color: var(--bg-white);">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title fw-bold" id="maternityModalLabel">Maternity & Neonatal Department</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>We pride ourselves in being one of the safest delivery hubs in Butere Sub-County. Our dedicated maternity ward is equipped to handle emergency obstetric situations.</p>
+          <h6 class="fw-bold mb-2">Services Rendered:</h6>
+          <ul>
+            <li>Normal & Assisted Vaginal Delivery</li>
+            <li>Cesarean section operations in our specialized theatre</li>
+            <li>Antenatal Clinic (ANC) every Monday and Thursday</li>
+            <li>Neonatal care including baby incubator support</li>
+          </ul>
+          <div class="mt-3 p-3 bg-light rounded text-center small text-muted">
+            <strong>Lead Midwife:</strong> Sister Joyce Auma | <strong>Hours:</strong> 24/7 Hours
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Placeholders for other modals to satisfy completeness -->
+  <div class="modal fade" id="pediatricsModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:var(--radius-md); background-color:var(--bg-white);"><div class="modal-header border-bottom-0"><h5 class="modal-title fw-bold">Pediatrics Ward</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Our pediatric division handles all child vaccinations and clinical reviews. Immunizations are carried out using state guidelines.</p></div></div></div></div>
+  <div class="modal fade" id="labModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:var(--radius-md); background-color:var(--bg-white);"><div class="modal-header border-bottom-0"><h5 class="modal-title fw-bold">Medical Laboratory</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Automated lab testing. Results are uploaded directly to the digital hospital database system for swift access by consulting doctors.</p></div></div></div></div>
+  <div class="modal fade" id="radiologyModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:var(--radius-md); background-color:var(--bg-white);"><div class="modal-header border-bottom-0"><h5 class="modal-title fw-bold">Radiology & X-Ray</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Offers digital chest X-rays, limb fractures imaging, and prenatal ultrasounds. Operates 24 hours for emergency cases.</p></div></div></div></div>
+  <div class="modal fade" id="pharmacyModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:var(--radius-md); background-color:var(--bg-white);"><div class="modal-header border-bottom-0"><h5 class="modal-title fw-bold">Hospital Pharmacy</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Dispenses essential medication for inpatients and outpatients. Free pharmaceutical refills for CCC patients are managed here.</p></div></div></div></div>
+  <div class="modal fade" id="emergencyModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:var(--radius-md); background-color:var(--bg-white);"><div class="modal-header border-bottom-0"><h5 class="modal-title fw-bold">Emergency Unit</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Handles road accidents, critical emergencies, and cardiac arrest cases. Call our hotline for immediate ambulance dispatch.</p></div></div></div></div>
+  <div class="modal fade" id="dentalModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:var(--radius-md); background-color:var(--bg-white);"><div class="modal-header border-bottom-0"><h5 class="modal-title fw-bold">Dental Department</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Scheduled dental visits, tooth decay diagnosis, fillings, and dental operations. NHIF cardholders covered.</p></div></div></div></div>
+  <div class="modal fade" id="surgeryModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:var(--radius-md); background-color:var(--bg-white);"><div class="modal-header border-bottom-0"><h5 class="modal-title fw-bold">General Surgery</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Led by senior surgeons. Offers emergency laparotomies, appendectomies, and planned orthopedic procedures.</p></div></div></div></div>
+  <div class="modal fade" id="cccModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:var(--radius-md); background-color:var(--bg-white);"><div class="modal-header border-bottom-0"><h5 class="modal-title fw-bold">Comprehensive Care Clinic</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Provides counseling, support group access, CD4 and viral load testing, and free antiretroviral treatment dispensing.</p></div></div></div></div>
+  <div class="modal fade" id="physioModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:var(--radius-md); background-color:var(--bg-white);"><div class="modal-header border-bottom-0"><h5 class="modal-title fw-bold">Physiotherapy</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Aids patients recovering from stroke, sports injuries, or skeletal conditions with targeted workouts and muscle rehabilitation sessions.</p></div></div></div></div>
+
+  <!-- Footer -->
+  <footer class="hospital-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-logo-wrapper">
+            <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+            <span class="footer-logo-text">
+              BUTERE COUNTY
+              <span>County Hospital</span>
+            </span>
+          </div>
+          <p class="mb-4">We are dedicated to providing accessible, high-quality healthcare services to Butere Sub-County and the surrounding regions. Your health is our priority.</p>
+          <div class="footer-social-icons">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Our Doctors</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Photo Gallery</a></li>
+            <li><a href="careers.html"><i class="fa-solid fa-chevron-right"></i> Careers & Intake</a></li>
+            <li><a href="faq.html"><i class="fa-solid fa-chevron-right"></i> Patient FAQs</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Our Departments</h4>
+          <ul class="footer-links">
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Outpatient (OPD)</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Maternity & Theatre</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Pediatrics Ward</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Radiology & X-Ray</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Medical Laboratory</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Comprehensive Care (CCC)</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Butere-Mumias Road, Butere Town, Kakamega County, Kenya</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+254 (0) 700 000 000<br>+254 (0) 722 000 000</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>info@buterehospital.go.ke<br>appointments@buterehospital.go.ke</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Butere County County Hospital. All rights reserved. An official government health institution website.</p>
+        <p>Managed by Kakamega County Government | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Use</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-actions">
+    <a href="tel:+254700000000" class="float-btn btn-emergency-float" aria-label="Call Emergency Hotline">
+      <i class="fa-solid fa-phone-flip"></i>
+    </a>
+    <a href="https://wa.me/254700000000" target="_blank" class="float-btn btn-whatsapp-float" aria-label="Chat via WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button class="float-btn btn-scroll-top" aria-label="Scroll back to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Scroll Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>

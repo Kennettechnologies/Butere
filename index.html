@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butere County County Hospital - Quality Healthcare For Everyone</title>
+  <meta name="description" content="Official website of Butere County County Hospital. Committed to offering high quality, accessible, and affordable healthcare services to the residents of Kakamega County.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> Emergency Hotline: +254 (0) 700 000 000</span>
+        <span><i class="fa-solid fa-clock"></i> Hours: 24 Hours Open (OPD & Emergency)</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="faq.html">FAQs</a>
+        <a href="careers.html">Careers & Attachments</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container-fluid px-lg-5 px-3">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+        <span>
+          <strong>BUTERE COUNTY</strong>
+          <span class="brand-sub">County Hospital</span>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="departments.html">Departments</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News & Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a href="appointments.html" class="btn btn-custom btn-custom-primary">
+            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section (Slider using Swiper) -->
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide hero-slide" style="background-image: url('images/hero-hospital.png');">
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-tag">WELCOME TO BUTERE COUNTY HOSPITAL</span>
+            <h1>Quality Healthcare For Everyone</h1>
+            <p>We are committed to delivering premium healthcare, professional expertise, and state-of-the-art medical services to the Butere community and beyond.</p>
+            <div class="hero-buttons">
+              <a href="appointments.html" class="btn btn-custom btn-custom-primary"><i class="fa-solid fa-calendar-plus"></i> Book Appointment</a>
+              <a href="contact.html" class="btn btn-custom btn-custom-white"><i class="fa-solid fa-circle-info"></i> Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide hero-slide" style="background-image: url('images/hero-hospital.png');">
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-tag">MODERN DIAGNOSTICS & TREATMENT</span>
+            <h1>Empowering Healthy Communities</h1>
+            <p>Equipped with modern laboratories, radiology suites, and dedicated specialists, we provide diagnostic and clinical care you can fully trust.</p>
+            <div class="hero-buttons">
+              <a href="departments.html" class="btn btn-custom btn-custom-primary"><i class="fa-solid fa-briefcase-medical"></i> Our Departments</a>
+              <a href="about.html" class="btn btn-custom btn-custom-white"><i class="fa-solid fa-hospital"></i> Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Pagination & Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next" style="color: white;"></div>
+    <div class="swiper-button-prev" style="color: white;"></div>
+  </div>
+
+  <!-- Quick Access Cards -->
+  <section class="quick-access-section">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <!-- Emergency -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="quick-card card-danger">
+            <div class="quick-card-icon"><i class="fa-solid fa-truck-medical"></i></div>
+            <h3>Emergency Care</h3>
+            <p>Our emergency unit, ambulance service, and trauma response team operate 24 hours a day, 7 days a week.</p>
+            <a href="tel:+254700000000" class="btn btn-danger w-100"><i class="fa-solid fa-phone"></i> Call: +254 700 000 000</a>
+          </div>
+        </div>
+        <!-- Doctor Schedule -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="quick-card card-primary">
+            <div class="quick-card-icon"><i class="fa-solid fa-user-doctor"></i></div>
+            <h3>Consult a Specialist</h3>
+            <p>Review our specialized services including pediatrics, obstetrics, gynecology, and surgical consulting.</p>
+            <a href="doctors.html" class="btn btn-custom btn-custom-primary w-100"><i class="fa-solid fa-magnifying-glass"></i> Find a Doctor</a>
+          </div>
+        </div>
+        <!-- NHIF / SHIF Coverage -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="quick-card card-secondary">
+            <div class="quick-card-icon"><i class="fa-solid fa-id-card"></i></div>
+            <h3>NHIF / SHIF Insurance</h3>
+            <p>We fully accept NHIF, SHIF, and county health schemes to ensure you receive affordable and hassle-free services.</p>
+            <a href="faq.html" class="btn btn-custom btn-custom-secondary w-100"><i class="fa-solid fa-circle-question"></i> Coverage details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome / About Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="pe-lg-4">
+            <div class="section-title-wrapper text-start mb-4">
+              <span class="badge">WHO WE ARE</span>
+              <h2 class="mt-2">Dedicated to Providing Healing & Hope</h2>
+            </div>
+            <p class="lead text-primary mb-4">Butere County County Hospital stands as a premier medical facility offering advanced clinical solutions and compassionate healthcare to Western Kenya.</p>
+            <p class="mb-4">Originally established to provide essential healthcare services, our facility has grown under the Kakamega County Government. We support our patients with a modern laboratory, digital radiology, dedicated maternity wards, pediatric clinics, and emergency services.</p>
+            <div class="row g-4 mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="text-primary fs-3"><i class="fa-solid fa-circle-check"></i></div>
+                  <div><strong>ISO Certified Standards</strong></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="text-primary fs-3"><i class="fa-solid fa-circle-check"></i></div>
+                  <div><strong>24/7 Pharmacy Access</strong></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="text-primary fs-3"><i class="fa-solid fa-circle-check"></i></div>
+                  <div><strong>Expert Medical Staff</strong></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="text-primary fs-3"><i class="fa-solid fa-circle-check"></i></div>
+                  <div><strong>Advanced Inpatient Wards</strong></div>
+                </div>
+              </div>
+            </div>
+            <a href="about.html" class="btn btn-custom btn-custom-primary">More About Us <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="position-relative">
+            <img src="images/hero-hospital.png" alt="Hospital Entrance" class="img-fluid rounded-lg shadow-xl" style="border-radius: var(--radius-lg);">
+            <div class="position-absolute bottom-0 start-0 m-4 p-4 bg-white rounded shadow-lg d-none d-sm-flex align-items-center gap-3" style="max-width: 280px; border-left: 5px solid var(--primary); border-radius: var(--radius-md) !important;">
+              <i class="fa-solid fa-clock text-primary fs-2"></i>
+              <div>
+                <h6 class="mb-1 fw-bold text-dark">Working Hours</h6>
+                <p class="mb-0 text-muted small">OPD: 24 Hours / 7 Days<br>Specialists: 8am - 5pm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Counter Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Stat 1 -->
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-hospital-user"></i></div>
+            <div class="stat-number" data-target="150000" data-suffix="+">0</div>
+            <div class="stat-title">Patients Served Annually</div>
+          </div>
+        </div>
+        <!-- Stat 2 -->
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div>
+            <div class="stat-number" data-target="45" data-suffix="+">0</div>
+            <div class="stat-title">Specialist Doctors</div>
+          </div>
+        </div>
+        <!-- Stat 3 -->
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-bed"></i></div>
+            <div class="stat-number" data-target="180" data-suffix="">0</div>
+            <div class="stat-title">Patient Beds</div>
+          </div>
+        </div>
+        <!-- Stat 4 -->
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="stat-number" data-target="25" data-suffix="+">0</div>
+            <div class="stat-title font-heading">Years of Excellence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Departments -->
+  <section class="section-padding bg-light-gray">
+    <div class="container">
+      <div class="section-title-wrapper" data-aos="fade-up">
+        <span class="badge">DEPARTMENTS</span>
+        <h2 class="mt-2">Our Key Medical Specialties</h2>
+        <p>Providing a wide spectrum of health care services, ranging from primary care to sophisticated specialty medicine.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Dept 1: OPD -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">24/7 OPEN</div>
+              <img src="images/hero-hospital.png" alt="Outpatient Department" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-kit-medical text-primary me-2"></i>Outpatient (OPD)</h3>
+              <p class="hospital-card-text">Comprehensive general outpatient consultations, triage, emergency observation, and standard pharmacy dispensing.</p>
+              <ul class="card-services-list">
+                <li>General Consultations</li>
+                <li>Emergency Triage</li>
+                <li>Routine Checkups</li>
+              </ul>
+              <a href="departments.html" class="btn btn-custom btn-custom-secondary w-100 mt-auto">View Department</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dept 2: Maternity -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">MATERNAL CARE</div>
+              <img src="images/hero-hospital.png" alt="Maternity Unit" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-baby-carriage text-primary me-2"></i>Maternity & Neonatal</h3>
+              <p class="hospital-card-text">Premium maternity services, state-of-the-art delivery rooms, prenatal, postnatal clinics, and incubator support.</p>
+              <ul class="card-services-list">
+                <li>Antenatal Care (ANC)</li>
+                <li>Safe Deliveries</li>
+                <li>Neonatal Intensive Care</li>
+              </ul>
+              <a href="departments.html" class="btn btn-custom btn-custom-secondary w-100 mt-auto">View Department</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dept 3: Pediatrics -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <div class="hospital-card-badge">PEDIATRIC WARD</div>
+              <img src="images/hero-hospital.png" alt="Pediatrics" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><i class="fa-solid fa-child-reaching text-primary me-2"></i>Pediatrics & Child Health</h3>
+              <p class="hospital-card-text">Dedicated pediatric care, childhood immunization clinics, child growth monitoring, and inpatient child wards.</p>
+              <ul class="card-services-list">
+                <li>Immunization Services</li>
+                <li>Nutritional Counseling</li>
+                <li>Pediatric Emergency Care</li>
+              </ul>
+              <a href="departments.html" class="btn btn-custom btn-custom-secondary w-100 mt-auto">View Department</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="departments.html" class="btn btn-custom btn-custom-primary">View All Departments <i class="fa-solid fa-hospital-user"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors Preview -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-title-wrapper" data-aos="fade-up">
+        <span class="badge">OUR DOCTORS</span>
+        <h2 class="mt-2">Meet Our Specialized Staff</h2>
+        <p>Our team of highly qualified medical practitioners, nurses, and technicians are committed to providing you with premium patient care.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Doctor 1 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="hospital-card doctor-card">
+            <div class="hospital-card-img-wrapper" style="aspect-ratio: 1/1; border-radius: 50%; max-width: 180px; margin: 25px auto 0; border: 4px solid var(--border);">
+              <img src="images/hero-hospital.png" alt="Dr. John Doe" class="hospital-card-img" style="object-position: center top;">
+            </div>
+            <div class="hospital-card-body">
+              <div class="doctor-specialty">Chief Medical Officer</div>
+              <h3 class="hospital-card-title" style="font-size: 1.15rem;">Dr. John Omondi</h3>
+              <div class="doctor-experience">15+ Years Experience</div>
+              <div class="doctor-availability"><i class="fa-solid fa-calendar-check me-1"></i> Available Mon - Fri</div>
+              <a href="doctors.html" class="btn btn-custom btn-custom-secondary btn-sm w-100">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="hospital-card doctor-card">
+            <div class="hospital-card-img-wrapper" style="aspect-ratio: 1/1; border-radius: 50%; max-width: 180px; margin: 25px auto 0; border: 4px solid var(--border);">
+              <img src="images/hero-hospital.png" alt="Dr. Jane Smith" class="hospital-card-img" style="object-position: center top;">
+            </div>
+            <div class="hospital-card-body">
+              <div class="doctor-specialty">Senior Pediatrician</div>
+              <h3 class="hospital-card-title" style="font-size: 1.15rem;">Dr. Jane Nabwera</h3>
+              <div class="doctor-experience">10+ Years Experience</div>
+              <div class="doctor-availability"><i class="fa-solid fa-calendar-check me-1"></i> Available Tue - Sat</div>
+              <a href="doctors.html" class="btn btn-custom btn-custom-secondary btn-sm w-100">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="hospital-card doctor-card">
+            <div class="hospital-card-img-wrapper" style="aspect-ratio: 1/1; border-radius: 50%; max-width: 180px; margin: 25px auto 0; border: 4px solid var(--border);">
+              <img src="images/hero-hospital.png" alt="Dr. Robert Green" class="hospital-card-img" style="object-position: center top;">
+            </div>
+            <div class="hospital-card-body">
+              <div class="doctor-specialty">Gynaecologist</div>
+              <h3 class="hospital-card-title" style="font-size: 1.15rem;">Dr. Robert Wanyama</h3>
+              <div class="doctor-experience">12+ Years Experience</div>
+              <div class="doctor-availability"><i class="fa-solid fa-calendar-check me-1"></i> Available Mon - Thu</div>
+              <a href="doctors.html" class="btn btn-custom btn-custom-secondary btn-sm w-100">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 4 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="hospital-card doctor-card">
+            <div class="hospital-card-img-wrapper" style="aspect-ratio: 1/1; border-radius: 50%; max-width: 180px; margin: 25px auto 0; border: 4px solid var(--border);">
+              <img src="images/hero-hospital.png" alt="Dr. Mercy Chepkemoi" class="hospital-card-img" style="object-position: center top;">
+            </div>
+            <div class="hospital-card-body">
+              <div class="doctor-specialty">General Surgeon</div>
+              <h3 class="hospital-card-title" style="font-size: 1.15rem;">Dr. Mercy Chepkemoi</h3>
+              <div class="doctor-experience">8+ Years Experience</div>
+              <div class="doctor-availability"><i class="fa-solid fa-calendar-check me-1"></i> Available Mon, Wed, Fri</div>
+              <a href="doctors.html" class="btn btn-custom btn-custom-secondary btn-sm w-100">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Health Tips section -->
+  <section class="section-padding bg-light-gray">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5" data-aos="fade-right">
+          <span class="badge bg-secondary mb-3 text-white px-3 py-2 rounded-pill">HEALTH TIPS</span>
+          <h2 class="mb-4">Empowering You with Better Health Knowledge</h2>
+          <p class="mb-4">Prevention is always better than cure. Our clinical team regularly publishes health tips and guidelines to keep your household healthy, active, and safe.</p>
+          <ul class="list-unstyled mb-4">
+            <li class="d-flex align-items-start gap-3 mb-3">
+              <i class="fa-solid fa-shield-halved text-primary fs-4"></i>
+              <div>
+                <strong>Regular Screening:</strong> Check blood pressure and sugar levels at least once every six months to detect hypertension or diabetes early.
+              </div>
+            </li>
+            <li class="d-flex align-items-start gap-3 mb-3">
+              <i class="fa-solid fa-droplet text-primary fs-4"></i>
+              <div>
+                <strong>Adequate Hydration:</strong> Drinking 2-3 liters of clean water daily helps maintain kidney function and promotes smooth digestion.
+              </div>
+            </li>
+            <li class="d-flex align-items-start gap-3">
+              <i class="fa-solid fa-mosquito text-primary fs-4"></i>
+              <div>
+                <strong>Malaria Prevention:</strong> Sleep under insecticide-treated mosquito nets and clear stagnant waters around your residence.
+              </div>
+            </li>
+          </ul>
+          <a href="news.html" class="btn btn-custom btn-custom-primary">View Health News <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="card border-0 shadow-lg p-4" style="border-radius: var(--radius-lg); background: var(--gradient-card);">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h4 class="mb-0 fw-bold"><i class="fa-solid fa-circle-nodes text-primary me-2"></i>Outreach Event Countdown</h4>
+              <span class="badge bg-danger">Free Screening</span>
+            </div>
+            <p>Join us at Butere Sub-County Headquarters for a free medical camp. We will provide free cancer screens, diabetes testing, pediatric checks, and NHIF registration.</p>
+            <div class="countdown-container mt-3" id="countdown-date">
+              <div class="countdown-digits">
+                <div class="countdown-box">
+                  <span id="days" class="countdown-number">00</span>
+                  <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-box">
+                  <span id="hours" class="countdown-number">00</span>
+                  <span class="countdown-label">Hrs</span>
+                </div>
+                <div class="countdown-box">
+                  <span id="minutes" class="countdown-number">00</span>
+                  <span class="countdown-label">Min</span>
+                </div>
+                <div class="countdown-box">
+                  <span id="seconds" class="countdown-number">00</span>
+                  <span class="countdown-label">Sec</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-title-wrapper" data-aos="fade-up">
+        <span class="badge">TESTIMONIALS</span>
+        <h2 class="mt-2">What Our Patients Say</h2>
+        <p>Read inspiring stories of healing, quality care, and customer satisfaction from the members of our community.</p>
+      </div>
+
+      <div class="swiper testimonials-swiper p-4" style="max-width: 800px; margin: 0 auto;">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide text-center">
+            <div class="mb-3 fs-1 text-primary"><i class="fa-solid fa-quote-left"></i></div>
+            <p class="fs-5 mb-4 font-body">"I was admitted to the maternity ward for my first delivery. The nurses were incredibly supportive, caring, and professional. The new facilities are clean, and the care was outstanding!"</p>
+            <h5 class="fw-bold mb-1">Mary Auma</h5>
+            <span class="text-muted small">Butere Resident</span>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide text-center">
+            <div class="mb-3 fs-1 text-primary"><i class="fa-solid fa-quote-left"></i></div>
+            <p class="fs-5 mb-4 font-body">"The laboratory diagnostics were very fast and accurate. Within an hour, I had my lab results and prescriptions dispensed. I highly recommend Butere County Hospital."</p>
+            <h5 class="fw-bold mb-1">John Khalwale</h5>
+            <span class="text-muted small">Mumias Town</span>
+          </div>
+        </div>
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Preview -->
+  <section class="section-padding bg-light-gray">
+    <div class="container">
+      <div class="section-title-wrapper" data-aos="fade-up">
+        <span class="badge">NEWS & UPDATES</span>
+        <h2 class="mt-2">Recent Announcements</h2>
+        <p>Keep track of public health notices, vaccination campaigns, county programs, and community updates.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Post 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <img src="images/hero-hospital.png" alt="Vaccination Campaign" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><a href="news.html">Sub-County Polio Vaccination Campaign 2026</a></h3>
+              <p class="hospital-card-text">We are conducting a sub-county polio immunization rollout for children under 5 years old. Free clinics are set up at all local healthcare hubs...</p>
+              <div class="hospital-card-meta">
+                <span><i class="fa-solid fa-calendar-days me-1"></i> May 25, 2026</span>
+                <span><i class="fa-solid fa-tag me-1"></i> Campaign</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <img src="images/hero-hospital.png" alt="Lab Upgrade" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><a href="news.html">County Government Upgrades Medical Lab</a></h3>
+              <p class="hospital-card-text">Thanks to funding from Kakamega County, our diagnostic laboratory has received automated biochemistry analyzers and hematology equipment...</p>
+              <div class="hospital-card-meta">
+                <span><i class="fa-solid fa-calendar-days me-1"></i> May 18, 2026</span>
+                <span><i class="fa-solid fa-tag me-1"></i> Hospital News</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="hospital-card">
+            <div class="hospital-card-img-wrapper">
+              <img src="images/hero-hospital.png" alt="Antenatal Services" class="hospital-card-img">
+            </div>
+            <div class="hospital-card-body">
+              <h3 class="hospital-card-title"><a href="news.html">Free Maternal Ultrasound Services Launched</a></h3>
+              <p class="hospital-card-text">Expectant mothers can now access ultrasound scans free of charge as part of our maternal safety initiative. Visit the clinic every Wednesday...</p>
+              <div class="hospital-card-meta">
+                <span><i class="fa-solid fa-calendar-days me-1"></i> May 10, 2026</span>
+                <span><i class="fa-solid fa-tag me-1"></i> Maternal Care</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Logos -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h5 class="text-muted fw-bold font-heading" style="font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">AFFILIATED PARTNERS & INSTITUTIONS</h5>
+      </div>
+      <div class="row align-items-center justify-content-center g-5 text-center">
+        <div class="col-md-2 col-4">
+          <h4 class="mb-0 text-muted fw-bold font-heading"><i class="fa-solid fa-shield-virus me-1 text-primary"></i> MOH Kenya</h4>
+        </div>
+        <div class="col-md-2 col-4">
+          <h4 class="mb-0 text-muted fw-bold font-heading"><i class="fa-solid fa-heart-pulse me-1 text-secondary"></i> WHO Africa</h4>
+        </div>
+        <div class="col-md-2 col-4">
+          <h4 class="mb-0 text-muted fw-bold font-heading"><i class="fa-solid fa-hand-holding-hand me-1 text-primary"></i> USAID</h4>
+        </div>
+        <div class="col-md-2 col-4">
+          <h4 class="mb-0 text-muted fw-bold font-heading"><i class="fa-solid fa-hospital-user me-1 text-secondary"></i> Kakamega Co.</h4>
+        </div>
+        <div class="col-md-2 col-4">
+          <h4 class="mb-0 text-muted fw-bold font-heading"><i class="fa-solid fa-id-card me-1 text-primary"></i> SHIF / NHIF</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding text-white text-center" style="background: var(--gradient-primary); position: relative; overflow: hidden;">
+    <div class="container" data-aos="zoom-in">
+      <h2 class="text-white mb-3" style="font-size: 2.5rem;">Need Medical Consultation or Assistance?</h2>
+      <p class="mx-auto mb-4" style="max-width: 600px; color: rgba(255,255,255,0.9);">Contact us now or book an appointment online to schedule a session with our qualified medical practitioners.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="appointments.html" class="btn btn-custom btn-custom-white"><i class="fa-solid fa-calendar-check"></i> Book Appointment Now</a>
+        <a href="tel:+254700000000" class="btn btn-custom btn-custom-secondary" style="border-color: white; color: white;"><i class="fa-solid fa-phone"></i> Emergency Line</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="hospital-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-logo-wrapper">
+            <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+            <span class="footer-logo-text">
+              BUTERE COUNTY
+              <span>County Hospital</span>
+            </span>
+          </div>
+          <p class="mb-4">We are dedicated to providing accessible, high-quality healthcare services to Butere Sub-County and the surrounding regions. Your health is our priority.</p>
+          <div class="footer-social-icons">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Our Doctors</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Photo Gallery</a></li>
+            <li><a href="careers.html"><i class="fa-solid fa-chevron-right"></i> Careers & Intake</a></li>
+            <li><a href="faq.html"><i class="fa-solid fa-chevron-right"></i> Patient FAQs</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Our Departments</h4>
+          <ul class="footer-links">
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Outpatient (OPD)</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Maternity & Theatre</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Pediatrics Ward</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Radiology & X-Ray</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Medical Laboratory</a></li>
+            <li><a href="departments.html"><i class="fa-solid fa-chevron-right"></i> Comprehensive Care (CCC)</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Butere-Mumias Road, Butere Town, Kakamega County, Kenya</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+254 (0) 700 000 000<br>+254 (0) 722 000 000</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>info@buterehospital.go.ke<br>appointments@buterehospital.go.ke</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Butere County County Hospital. All rights reserved. An official government health institution website.</p>
+        <p>Managed by Kakamega County Government | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Use</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-actions">
+    <a href="tel:+254700000000" class="float-btn btn-emergency-float" aria-label="Call Emergency Hotline">
+      <i class="fa-solid fa-phone-flip"></i>
+    </a>
+    <a href="https://wa.me/254700000000" target="_blank" class="float-btn btn-whatsapp-float" aria-label="Chat via WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button class="float-btn btn-scroll-top" aria-label="Scroll back to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Scroll Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Initialize Hero Swiper
+    const heroSwiper = new Swiper('.hero-swiper', {
+      loop: true,
+      effect: 'fade',
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // Initialize Testimonials Swiper
+    const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>
