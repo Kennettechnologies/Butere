@@ -1647,6 +1647,16 @@ img {
 .partner-logo-col:hover .partner-logo-img {
   filter: grayscale(0%) opacity(1);
 }
+/* Opportunity card descriptions — clamp to 3 lines for consistent height */
+.card-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.55;
+  min-height: calc(1.55em * 3);
+}
+
 .partner-logo-label {
   font-size: 0.72rem;
   color: var(--text-muted);
