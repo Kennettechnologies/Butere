@@ -33,7 +33,7 @@
   --transition: all 0.3s ease;
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --navbar-height: 80px;
+  --navbar-height: 70px;
 }
 
 [data-theme="dark"] {
@@ -95,34 +95,56 @@ img {
   display: block;
 }
 
-/* Sticky Header & Navbar */
+/* ==========================================
+   MODERN NAVBAR SYSTEM
+   ========================================== */
+
+/* Top Bar - compact 32px */
 .top-bar {
   background-color: var(--primary-dark);
   color: white;
-  font-size: 0.85rem;
-  padding: 8px 0;
+  font-size: 0.8rem;
+  padding: 5px 0;
   font-family: var(--font-body);
+  line-height: 1.4;
 }
 .top-bar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.top-bar-info span {
-  margin-right: 20px;
+.top-bar-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
-.top-bar-info i {
-  margin-right: 5px;
-  color: var(--accent);
-}
-.top-bar-links a {
+.top-bar-info span,
+.top-bar-emergency {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   color: white;
-  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
 }
-.top-bar-links a:hover {
-  color: var(--accent);
+.top-bar-emergency {
+  color: #ffd166 !important;
+  font-weight: 600;
 }
+.top-bar-emergency:hover { color: #fff !important; }
+.top-bar-info i { color: var(--accent); }
+.top-bar-emergency i { color: #ffd166; }
+.top-bar-links { display: flex; align-items: center; gap: 14px; }
+.top-bar-links a {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.78rem;
+  transition: color 0.2s;
+}
+.top-bar-links a:hover { color: var(--accent); }
 
+/* Main Navbar - 70px */
 .main-navbar {
   position: sticky;
   top: 0;
@@ -130,67 +152,334 @@ img {
   background-color: var(--bg-white);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  padding: 0;
+  min-height: var(--navbar-height);
 }
 .main-navbar.scrolled {
-  padding: 10px 0;
   box-shadow: var(--shadow-md);
 }
+.main-navbar .container-fluid {
+  min-height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+}
+
+/* Brand / Logo */
 .navbar-brand-custom {
   display: flex;
   align-items: center;
   gap: 10px;
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--primary) !important;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
   white-space: nowrap;
+  text-decoration: none;
+  padding: 0;
 }
 .navbar-brand-custom img {
-  height: 45px;
+  height: 62px;
+  width: 62px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
 }
 .navbar-brand-custom span {
   display: flex;
   flex-direction: column;
+  line-height: 1.2;
+}
+.navbar-brand-custom strong {
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
 }
 .navbar-brand-custom .brand-sub {
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
+/* Nav Links - Primary items */
 .nav-link {
   font-family: var(--font-heading);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.88rem;
   color: var(--text-dark) !important;
-  padding: 10px 15px !important;
+  padding: 8px 11px !important;
   position: relative;
+  white-space: nowrap;
 }
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 5px;
-  left: 15px;
-  right: 15px;
+  bottom: 2px;
+  left: 11px;
+  right: 11px;
   height: 2px;
   background: var(--gradient-primary);
   transform: scaleX(0);
-  transition: var(--transition);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
-.nav-link:hover::after, .nav-link.active::after {
-  transform: scaleX(1);
+.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+.nav-link.active { color: var(--primary) !important; }
+
+/* Secondary nav items — slightly lighter */
+.nav-secondary .nav-link {
+  font-weight: 500;
+  color: var(--text-muted) !important;
+  font-size: 0.84rem;
 }
-.nav-link.active {
+.nav-secondary .nav-link:hover,
+.nav-secondary .nav-link.active {
   color: var(--primary) !important;
 }
 
-.main-navbar .btn-custom {
-  padding: 8px 18px;
+/* Navbar divider between primary & secondary */
+.nav-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--border);
+  margin: 0 4px;
+  align-self: center;
+}
+
+/* ==========================================
+   MEGA MENU — Departments Dropdown
+   ========================================== */
+.mega-menu-item .dropdown-toggle::after { margin-left: 4px; }
+.mega-menu {
+  min-width: 480px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--bg-white);
+  top: calc(100% + 4px) !important;
+}
+.mega-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+.mega-menu-item-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text-body);
+  font-family: var(--font-heading);
   font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.mega-menu-item-link:hover {
+  background-color: var(--bg);
+  color: var(--primary);
+}
+.mega-menu-item-link i {
+  width: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+[data-theme="dark"] .mega-menu {
+  background-color: var(--bg-card);
+  border-color: var(--border);
+}
+[data-theme="dark"] .mega-menu-item-link { color: var(--text-body); }
+[data-theme="dark"] .mega-menu-item-link:hover { background-color: var(--bg); color: var(--accent); }
+
+/* ==========================================
+   NAVBAR ACTION BUTTONS
+   ========================================== */
+
+/* Icon buttons (search, theme) */
+.navbar-icon-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-dark);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  background-color: var(--bg);
   white-space: nowrap;
 }
+.navbar-icon-btn:hover {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Emergency button — red */
+.btn-emergency-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-decoration: none;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #DC2626, #b91c1c);
+  color: white !important;
+  border: none;
+  box-shadow: 0 4px 14px rgba(220,38,38,0.3);
+  transition: all 0.25s ease;
+}
+.btn-emergency-nav:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(220,38,38,0.45);
+  color: white !important;
+}
+
+/* Appointment button — gradient with pulse */
+@keyframes appointmentPulse {
+  0%   { box-shadow: 0 4px 18px rgba(10,110,189,0.35); }
+  50%  { box-shadow: 0 6px 28px rgba(10,110,189,0.6); }
+  100% { box-shadow: 0 4px 18px rgba(10,110,189,0.35); }
+}
+.btn-appointment-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-decoration: none;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #0066CC, #00B894);
+  color: white !important;
+  border: none;
+  animation: appointmentPulse 3s infinite;
+  transition: all 0.25s ease;
+}
+.btn-appointment-nav:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  color: white !important;
+}
+
+/* ==========================================
+   SEARCH OVERLAY
+   ========================================== */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,20,40,0.75);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 120px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.search-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.search-overlay-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  box-shadow: var(--shadow-xl);
+  gap: 12px;
+}
+.search-overlay-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  background: transparent;
+  padding: 8px 0;
+}
+.search-overlay-input::placeholder { color: var(--text-muted); }
+.search-overlay-close {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.2s;
+}
+.search-overlay-close:hover { color: var(--danger); }
+[data-theme="dark"] .search-overlay-inner {
+  background: var(--bg-card);
+}
+[data-theme="dark"] .search-overlay-input { color: var(--text-dark); }
+
+/* ==========================================
+   DARK MODE NAVBAR OVERRIDES
+   Bootstrap uses its own --bs-navbar-color which doesn't
+   respond to data-theme — override everything explicitly
+   ========================================== */
+[data-theme="dark"] .main-navbar {
+  background-color: var(--bg-white) !important;
+  border-bottom: 1px solid var(--border);
+}
+[data-theme="dark"] .navbar-brand-custom {
+  color: var(--primary) !important;
+}
+[data-theme="dark"] .navbar-brand-custom .brand-sub {
+  color: var(--text-muted) !important;
+}
+[data-theme="dark"] .nav-link {
+  color: var(--text-dark) !important;
+}
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: var(--accent) !important;
+}
+[data-theme="dark"] .nav-secondary .nav-link {
+  color: var(--text-muted) !important;
+}
+[data-theme="dark"] .nav-secondary .nav-link:hover,
+[data-theme="dark"] .nav-secondary .nav-link.active {
+  color: var(--accent) !important;
+}
+[data-theme="dark"] .navbar-icon-btn {
+  color: var(--text-dark) !important;
+  background-color: var(--bg) !important;
+  border-color: var(--border) !important;
+}
+[data-theme="dark"] .navbar-icon-btn:hover {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-color: var(--primary) !important;
+}
+[data-theme="dark"] .navbar-toggler {
+  border-color: var(--border) !important;
+}
+[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1);
+}
+[data-theme="dark"] .nav-divider {
+  background: var(--border);
+}
+
 
 /* Dark Mode Toggle */
 .theme-toggle-btn {
@@ -1224,6 +1513,43 @@ img {
   font-size: 0.7rem;
   text-transform: uppercase;
   color: var(--text-muted);
+}
+
+/* Partner Logos Section */
+.partner-logo-col {
+  transition: transform 0.25s ease;
+}
+.partner-logo-col:hover {
+  transform: translateY(-4px);
+}
+.partner-logo-img {
+  max-height: 72px;
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(40%) opacity(0.85);
+  transition: filter 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+.partner-logo-col:hover .partner-logo-img {
+  filter: grayscale(0%) opacity(1);
+}
+.partner-logo-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+[data-theme="dark"] .partner-logo-img {
+  filter: grayscale(30%) brightness(0.9) opacity(0.8);
+}
+[data-theme="dark"] .partner-logo-col:hover .partner-logo-img {
+  filter: grayscale(0%) brightness(1.1) opacity(1);
 }
 
 /* Dark Mode Bootstrap Card Overrides */

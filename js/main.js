@@ -7,16 +7,160 @@ document.addEventListener('DOMContentLoaded', function() {
   if (themeToggleBtn) {
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
+    document.documentElement.setAttribute('data-bs-theme', currentTheme); // sync Bootstrap
     updateThemeIcon(currentTheme);
 
     themeToggleBtn.addEventListener('click', function() {
       const theme = document.documentElement.getAttribute('data-theme');
       const newTheme = theme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
+      document.documentElement.setAttribute('data-bs-theme', newTheme); // sync Bootstrap
       localStorage.setItem('theme', newTheme);
       updateThemeIcon(newTheme);
     });
   }
+
+  // =============================================
+  // SITE SEARCH — full client-side implementation
+  // =============================================
+
+  // Static content index — all searchable items on the site
+  const SEARCH_INDEX = [
+    // Pages
+    { title: 'Home',                    desc: 'Butere County Hospital homepage and overview',                           url: 'index.html',        icon: 'fa-house',            cat: 'Page' },
+    { title: 'About Us',                desc: 'Hospital history, mission, vision, core values, and leadership',        url: 'about.html',        icon: 'fa-circle-info',      cat: 'Page' },
+    { title: 'Services',                desc: 'All medical services offered at Butere County Hospital',                url: 'services.html',     icon: 'fa-briefcase-medical',cat: 'Page' },
+    { title: 'Departments',             desc: 'All hospital departments, wards, and clinical units',                   url: 'departments.html',  icon: 'fa-hospital',         cat: 'Page' },
+    { title: 'Our Doctors',             desc: 'Meet our qualified medical practitioners and specialists',              url: 'doctors.html',      icon: 'fa-user-doctor',      cat: 'Page' },
+    { title: 'News & Events',           desc: 'Latest hospital news, health campaigns, and upcoming events',           url: 'news.html',         icon: 'fa-newspaper',        cat: 'Page' },
+    { title: 'Gallery',                 desc: 'Photos of our hospital facilities, staff, and events',                  url: 'gallery.html',      icon: 'fa-images',           cat: 'Page' },
+    { title: 'Contact Us',              desc: 'Get in touch — location, phone numbers, email, and map',               url: 'contact.html',      icon: 'fa-envelope',         cat: 'Page' },
+    { title: 'Book Appointment',        desc: 'Schedule a consultation with our specialist doctors online',            url: 'appointments.html', icon: 'fa-calendar-check',   cat: 'Page' },
+    { title: 'Patient FAQs',            desc: 'Answers to common questions about services, fees, and coverage',        url: 'faq.html',          icon: 'fa-circle-question',  cat: 'Page' },
+    { title: 'Careers & Attachments',   desc: 'Job openings, student internships, and clinical attachments',           url: 'careers.html',      icon: 'fa-briefcase',        cat: 'Page' },
+    // Departments
+    { title: 'Outpatient (OPD)',        desc: 'General consultations, triage, and routine outpatient care',            url: 'departments.html',  icon: 'fa-stethoscope',      cat: 'Department' },
+    { title: 'Maternity & Theatre',     desc: 'Antenatal clinics, safe delivery, postnatal care, and surgery',         url: 'departments.html',  icon: 'fa-baby',             cat: 'Department' },
+    { title: 'Pediatrics Ward',         desc: 'Inpatient care for children, neonates, and immunisation',               url: 'departments.html',  icon: 'fa-child',            cat: 'Department' },
+    { title: 'Medical Laboratory',      desc: 'Blood tests, hematology, PCR, serology, and rapid diagnostics',         url: 'departments.html',  icon: 'fa-flask',            cat: 'Department' },
+    { title: 'Pharmacy',                desc: 'Medication dispensing, SHA-covered drugs, and counseling',              url: 'departments.html',  icon: 'fa-pills',            cat: 'Department' },
+    { title: 'Radiology & X-Ray',       desc: 'X-ray imaging, ultrasound, and diagnostic radiology services',          url: 'departments.html',  icon: 'fa-x-ray',            cat: 'Department' },
+    { title: 'Dental Clinic',           desc: 'Dental checkups, fillings, extractions, and oral health care',          url: 'departments.html',  icon: 'fa-tooth',            cat: 'Department' },
+    { title: 'Comprehensive Care (CCC)','desc': 'HIV/AIDS management, ARV therapy, VCT, and TB care',                  url: 'departments.html',  icon: 'fa-ribbon',           cat: 'Department' },
+    // Services
+    { title: 'Emergency Services',      desc: '24-hour emergency care, trauma response, and critical care',            url: 'services.html',     icon: 'fa-truck-medical',    cat: 'Service' },
+    { title: 'SHA Insurance',           desc: 'Social Health Authority card accepted for all services',                url: 'services.html',     icon: 'fa-id-card',          cat: 'Service' },
+    { title: 'Vaccination & Immunisation','desc':'Child and adult immunisation, polio, measles, and HPV vaccines',     url: 'services.html',     icon: 'fa-syringe',          cat: 'Service' },
+    { title: 'Family Planning',         desc: 'Contraception counseling, implants, IUDs, and family planning',         url: 'services.html',     icon: 'fa-heart-pulse',      cat: 'Service' },
+    { title: 'Linda Mama',              desc: 'Free maternity care under the Linda Mama / SHA program',                url: 'services.html',     icon: 'fa-baby-carriage',    cat: 'Service' },
+    { title: 'Mental Health',           desc: 'Psychological support, counseling, and mental wellness',                url: 'services.html',     icon: 'fa-brain',            cat: 'Service' },
+    // Careers
+    { title: 'Nursing Attachment',      desc: 'Clinical rotation for diploma and degree nursing students',             url: 'careers.html',      icon: 'fa-user-nurse',       cat: 'Career' },
+    { title: 'ICT Student Attachment',  desc: 'IT attachment in hospital systems and health informatics',              url: 'careers.html',      icon: 'fa-laptop-medical',   cat: 'Career' },
+    { title: 'Medical Lab Internship',  desc: 'Six-month internship for Medical Laboratory Science graduates',         url: 'careers.html',      icon: 'fa-flask',            cat: 'Career' },
+    { title: 'Community Health Volunteer','desc':'Volunteer in vaccination campaigns, sanitation, and outreach',       url: 'careers.html',      icon: 'fa-hands-helping',    cat: 'Career' },
+  ];
+
+  const searchToggle  = document.getElementById('search-toggle');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchClose   = document.getElementById('search-close');
+  const searchInput   = document.getElementById('site-search-input');
+
+  // Inject results container once
+  let searchResults = null;
+  if (searchOverlay) {
+    const inner = searchOverlay.querySelector('.search-overlay-inner');
+    searchResults = document.createElement('div');
+    searchResults.className = 'search-results';
+    searchResults.id = 'search-results';
+    searchOverlay.querySelector('.search-overlay-inner').insertAdjacentElement('afterend', searchResults);
+  }
+
+  // Perform search and render results
+  function doSearch(query) {
+    if (!searchResults) return;
+    query = query.trim().toLowerCase();
+
+    if (!query) {
+      searchResults.innerHTML = '';
+      searchResults.classList.remove('has-results');
+      return;
+    }
+
+    const tokens = query.split(/\s+/);
+    const matches = SEARCH_INDEX.filter(item => {
+      const haystack = (item.title + ' ' + item.desc + ' ' + item.cat).toLowerCase();
+      return tokens.every(t => haystack.includes(t));
+    }).slice(0, 8); // cap at 8 results
+
+    if (matches.length === 0) {
+      searchResults.innerHTML = `<div class="search-no-results"><i class="fa-solid fa-magnifying-glass-minus"></i> No results for "<strong>${query}</strong>"</div>`;
+      searchResults.classList.add('has-results');
+      return;
+    }
+
+    searchResults.innerHTML = matches.map((item, i) => `
+      <a href="${item.url}" class="search-result-item" data-index="${i}" tabindex="0">
+        <div class="search-result-icon"><i class="fa-solid ${item.icon}"></i></div>
+        <div class="search-result-body">
+          <div class="search-result-title">${item.title}</div>
+          <div class="search-result-desc">${item.desc}</div>
+        </div>
+        <span class="search-result-cat">${item.cat}</span>
+      </a>
+    `).join('');
+    searchResults.classList.add('has-results');
+  }
+
+  // Keyboard navigation within results
+  let selectedIdx = -1;
+  function navigateResults(dir) {
+    if (!searchResults) return;
+    const items = searchResults.querySelectorAll('.search-result-item');
+    if (!items.length) return;
+    items[selectedIdx]?.classList.remove('focused');
+    selectedIdx = (selectedIdx + dir + items.length) % items.length;
+    items[selectedIdx].classList.add('focused');
+    items[selectedIdx].scrollIntoView({ block: 'nearest' });
+  }
+
+  function openSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.add('open');
+    selectedIdx = -1;
+    setTimeout(() => searchInput && searchInput.focus(), 100);
+  }
+  function closeSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.remove('open');
+    if (searchInput) searchInput.value = '';
+    if (searchResults) { searchResults.innerHTML = ''; searchResults.classList.remove('has-results'); }
+    selectedIdx = -1;
+  }
+
+  if (searchToggle) searchToggle.addEventListener('click', openSearch);
+  if (searchClose)  searchClose.addEventListener('click', closeSearch);
+  if (searchOverlay) {
+    searchOverlay.addEventListener('click', e => { if (e.target === searchOverlay) closeSearch(); });
+  }
+  if (searchInput) {
+    searchInput.addEventListener('input', () => { selectedIdx = -1; doSearch(searchInput.value); });
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowDown')  { e.preventDefault(); navigateResults(1); }
+      if (e.key === 'ArrowUp')    { e.preventDefault(); navigateResults(-1); }
+      if (e.key === 'Enter') {
+        const focused = searchResults && searchResults.querySelector('.search-result-item.focused');
+        if (focused) { closeSearch(); window.location.href = focused.getAttribute('href'); }
+        else {
+          const first = searchResults && searchResults.querySelector('.search-result-item');
+          if (first) { closeSearch(); window.location.href = first.getAttribute('href'); }
+        }
+      }
+    });
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeSearch();
+  });
 
   function updateThemeIcon(theme) {
     const icon = themeToggleBtn.querySelector('i');
@@ -32,10 +176,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Sticky Navbar Scroll Effect
   const navbar = document.querySelector('.main-navbar');
   window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     }
 
     // Scroll-to-top button display
@@ -133,10 +279,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Custom Search Fields
-  const searchInput = document.getElementById('search-input');
-  if (searchInput && itemsToFilter.length > 0) {
-    searchInput.addEventListener('keyup', function() {
+  // Custom Search Fields (page-level filter, e.g. doctors/gallery)
+  const pageSearchInput = document.getElementById('search-input');
+  if (pageSearchInput && itemsToFilter.length > 0) {
+    pageSearchInput.addEventListener('keyup', function() {
       const query = this.value.toLowerCase().trim();
 
       itemsToFilter.forEach(item => {
@@ -232,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Oops! There was a problem submitting your request. Please try again.');
           }
         })
-        .catch(error => {
+        .catch(_ => {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnText;
           alert('Oops! There was a problem submitting your request. Please check your connection and try again.');
@@ -282,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Oops! There was a problem sending your message. Please try again.');
           }
         })
-        .catch(error => {
+        .catch(_ => {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnText;
           alert('Oops! There was a problem sending your message. Please check your connection and try again.');

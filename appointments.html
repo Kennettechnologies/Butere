@@ -20,22 +20,23 @@
   <div class="top-bar">
     <div class="container top-bar-content">
       <div class="top-bar-info">
-        <span><i class="fa-solid fa-phone"></i> Emergency Hotline: +254 (0) 700 000 000</span>
-        <span><i class="fa-solid fa-clock"></i> Hours: 24 Hours Open (OPD & Emergency)</span>
+        <a href="tel:+254700000000" class="top-bar-emergency">
+          <i class="fa-solid fa-truck-medical"></i> Emergency: +254 (0) 700 000 000
+        </a>
+        <span><i class="fa-solid fa-clock"></i> Open 24/7 &mdash; OPD &amp; Emergency</span>
+        <span class="d-none d-md-inline"><i class="fa-solid fa-location-dot"></i> Butere, Kakamega County</span>
       </div>
       <div class="top-bar-links">
-        <a href="faq.html">FAQs</a>
-        <a href="careers.html">Careers & Attachments</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a>
+        <a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a>
       </div>
     </div>
   </div>
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-xl main-navbar">
-    <div class="container-fluid px-lg-5 px-3">
+    <div class="container-fluid px-lg-4 px-3">
       <a class="navbar-brand navbar-brand-custom" href="index.html">
-        <img src="images/hero-hospital.png" alt="Butere County Hospital Logo" style="border-radius: var(--radius-sm); object-fit: cover;">
+        <img src="images/hero-hospital.png" alt="Butere County Hospital Logo">
         <span>
           <strong>BUTERE COUNTY</strong>
           <span class="brand-sub">County Hospital</span>
@@ -45,27 +46,60 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNavbarContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="departments.html">Departments</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item mega-menu-item dropdown">
+            <a class="nav-link dropdown-toggle" href="departments.html" id="deptDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Departments
+            </a>
+            <div class="dropdown-menu mega-menu" aria-labelledby="deptDropdown">
+              <div class="mega-menu-grid">
+                <a href="departments.html" class="mega-menu-item-link"><i class="fa-solid fa-stethoscope text-primary"></i><span>Outpatient (OPD)</span></a>
+                <a href="departments.html" class="mega-menu-item-link"><i class="fa-solid fa-baby text-primary"></i><span>Maternity &amp; Theatre</span></a>
+                <a href="departments.html" class="mega-menu-item-link"><i class="fa-solid fa-child text-primary"></i><span>Pediatrics Ward</span></a>
+                <a href="departments.html" class="mega-menu-item-link"><i class="fa-solid fa-flask text-primary"></i><span>Medical Laboratory</span></a>
+                <a href="departments.html" class="mega-menu-item-link"><i class="fa-solid fa-pills text-primary"></i><span>Pharmacy</span></a>
+                <a href="departments.html" class="mega-menu-item-link"><i class="fa-solid fa-x-ray text-primary"></i><span>Radiology &amp; X-Ray</span></a>
+                <a href="departments.html" class="mega-menu-item-link"><i class="fa-solid fa-tooth text-primary"></i><span>Dental Clinic</span></a>
+                <a href="departments.html" class="mega-menu-item-link"><i class="fa-solid fa-ribbon text-primary"></i><span>Comprehensive Care (CCC)</span></a>
+              </div>
+            </div>
+          </li>
           <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
-          <li class="nav-item"><a class="nav-link" href="news.html">News & Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-divider d-none d-xl-block"></li>
+          <li class="nav-item nav-secondary"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item nav-secondary"><a class="nav-link" href="news.html">News &amp; Events</a></li>
+          <li class="nav-item nav-secondary"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item nav-secondary"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <div class="d-flex align-items-center gap-3">
-          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <div class="d-flex align-items-center gap-2 navbar-actions ms-lg-3">
+          <button class="navbar-icon-btn" id="search-toggle" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button id="theme-toggle" class="navbar-icon-btn theme-toggle-btn" aria-label="Toggle dark mode">
             <i class="fa-solid fa-moon"></i>
           </button>
-          <a href="appointments.html" class="btn btn-custom btn-custom-primary active">
+          <a href="tel:+254700000000" class="btn-emergency-nav d-none d-xl-inline-flex">
+            <i class="fa-solid fa-phone-flip"></i> Emergency
+          </a>
+          <a href="appointments.html" class="btn-appointment-nav">
             <i class="fa-solid fa-calendar-check"></i> Book Appointment
           </a>
         </div>
       </div>
     </div>
   </nav>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-inner">
+      <i class="fa-solid fa-magnifying-glass" style="color: var(--text-muted); font-size:1.1rem;"></i>
+      <input type="search" class="search-overlay-input" id="site-search-input" placeholder="Search departments, doctors, services..." autocomplete="off">
+      <button class="search-overlay-close" id="search-close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+
 
   <!-- Page Header -->
   <header class="page-header">

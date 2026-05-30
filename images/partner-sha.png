@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" style="scrollbar-gutter: stable;" class="h-full font-sans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="IC4jIGUfDF4-CDhsNzpYZwc5IQUGICtWTHiJ7LX-hXB4Nxk10lkAhwOc">
+
+    <meta name="title" content="sha.go.ke - Introducing Social Health Authority (SHA)">
+    <meta name="description" content="Ensuring a healthier, more equitable future for all through comprehensive coverage and quality care without financial worry">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sha.go.ke/">
+    <meta property="og:title" content="sha.go.ke -Introducing Social Health Authority (SHA)">
+    <meta property="og:description" content="Ensuring a healthier, more equitable future for all through comprehensive coverage and quality care without financial worry">
+    <meta property="og:image" content="/images/og_image.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.sha.go.ke/">
+    <meta property="twitter:title" content="sha.go.ke - Introducing Social Health Authority (SHA)">
+    <meta property="twitter:description" content="Ensuring a healthier, more equitable future for all through comprehensive coverage and quality care without financial worry">
+    <!--Twitter-->
+    <meta property="twitter:image" content="/images/og_image.png">
+
+    <title data-suffix=" Â· SHIF">
+SHIF
+     Â· SHIF</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <!-- assets -->
+    <link phx-track-static rel="icon" href="/images/favicon.ico">
+    <link phx-track-static rel="stylesheet" href="/assets/app.css">
+    <script defer phx-track-static type="text/javascript" src="/assets/app.js">
+    </script>
+  </head>
+  <body class="bg-white antialiased h-full overflow-x-hidden">
+    <div class="flex flex-col min-h-full items-center justify-center">
+      <div class="max-w-xl mx-auto w-full text-center">
+        <h1 class="text-2xl lg:text-5xl text-gray-900 font-bold">Oops!</h1>
+        <p class="text-lg text-gray-900 lg:text-2xl">
+          We couldn’t find the page you’re looking for.
+        </p>
+        <div class="mt-6 sm:mt-12">
+          <img class="max-h-48 h-full w-auto mx-auto" src="/images/oops_error_shif_happened.png" alt="oops_error_shif_happened">
+        </div>
+        <div class="mt-6 sm:mt-12">
+          <a href="/" data-phx-link="redirect" data-phx-link-state="push" class="btn btn-primary w-full rounded-full">Back to home</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
